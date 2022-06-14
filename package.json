@@ -1,0 +1,30 @@
+{
+  "name": "typescript-testing",
+  "version": "1.0.0",
+  "description": "A sample repo",
+  "type": "module",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch --verbose",
+    "test:cov": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/swftdev/typescript-testing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/swftdev/typescript-testing/issues"
+  },
+  "homepage": "https://github.com/swftdev/typescript-testing#readme",
+  "devDependencies": {
+    "@types/jest": "^28.1.1",
+    "jest": "^28.1.1",
+    "node-notifier": "^10.0.1",
+    "ts-jest": "^28.0.5",
+    "ts-node": "^10.8.1",
+    "typescript": "^4.7.3"
+  }
+}
