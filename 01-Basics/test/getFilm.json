@@ -1,0 +1,27 @@
+{
+	"id": "dc2e6bd1-8156-4886-adff-b39e6043af0c",
+	"title": "Test Data",
+	"original_title": "千と千尋の神隠し",
+	"original_title_romanised": "Sen to Chihiro no kamikakushi",
+	"image": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/39wmItIWsg5sZMyRUHLkWBcuVCM.jpg",
+	"movie_banner": "https://image.tmdb.org/t/p/original/bSXfU4dwZyBA1vMmXvejdRXBvuF.jpg",
+	"description": "Spirited Away is an Oscar winning Japanese animated film about a ten year old girl who wanders away from her parents along a path that leads to a world ruled by strange and unusual monster-like animals. Her parents have been changed into pigs along with others inside a bathhouse full of these creatures. Will she ever see the world how it once was?",
+	"director": "Hayao Miyazaki",
+	"producer": "Toshio Suzuki",
+	"release_date": "2001",
+	"running_time": "124",
+	"rt_score": "97",
+	"people": [
+		"https://ghibliapi.herokuapp.com/people/8228751c-bdc1-4b8d-a6eb-ca0eb909568f"
+	],
+	"species": [
+		"https://ghibliapi.herokuapp.com/species/af3910a6-429f-4c74-9ad5-dfe1c4aa04f2"
+	],
+	"locations": [
+		"https://ghibliapi.herokuapp.com/locations/"
+	],
+	"vehicles": [
+		"https://ghibliapi.herokuapp.com/vehicles/"
+	],
+	"url": "https://ghibliapi.herokuapp.com/films/dc2e6bd1-8156-4886-adff-b39e6043af0c"
+}
