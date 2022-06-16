@@ -18,13 +18,16 @@ export async function getFilm(filmID?: string) {
     let response: AxiosResponse;
     try {
         response = await axios.get(`https://ghibliapi.herokuapp.com/films/${filmId}`)
+
+        let validationErrors = validate<Film>(response.data)
+        if (validationErrors.length > 0) throw new FilmValidationError()
+
         film = deserialize<Film>(response.data)
     } catch (e) {
-        if (e instanceof AxiosError) throw new FilmApiError();
+        if (e instanceof FilmValidationError) throw e
+        if (e instanceof AxiosError) throw new FilmApiError()
         throw new Error("Unexpected Error has occured")
     }
 
-    let validationErrors = validate<Film>(response.data)
-    if (validationErrors.length > 0) throw new FilmValidationError()
     return film
 }

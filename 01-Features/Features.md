@@ -6,7 +6,6 @@ Unit tests are almost always in memory tests, not doing calls over the network
 If you want to test code that would usually make a network calls there are way to "Mock" out the functionality
 
 Notice in the api.test.ts file we "mock" out axios our library that is hitting the api. We are able to override the .get behavior to serve up json that is saved in the test folder.
-<br>
 
 &nbsp;
 &nbsp;

@@ -1,7 +1,7 @@
 import axios, { AxiosError } from "axios";
 
 import apiData from './getFilm.json'
-import { getFilm} from "../api";
+import { getFilm } from "../api";
 import { FilmApiError, FilmValidationError } from "../errors";
 
 // Mock axios
@@ -32,6 +32,32 @@ describe("getFilm", () => {
             expect(e).toBeInstanceOf(FilmApiError)
         }
         expect.assertions(1)
+    })
+
+    it("should should throw generic error if not of know type", async() => {
+        mockedAxios.get.mockRejectedValueOnce(new Error("Demo"))
+        try {
+            await getFilm()
+        } catch(e){
+            if(e instanceof Error)
+                expect(e.message).toBe("Unexpected Error has occured")
+        }
+        expect.assertions(1)
+    })
+
+    it("should should throw FilmValidationError if api response is malformed", async() => {
+        mockedAxios.get.mockResolvedValueOnce({ data: apiData })
+        let expectedTitle = "Test Data"
+        let response = await getFilm()
+        expect(response.title).toBe(expectedTitle)
+    })
+
+    it("axios.get should be called with formatted url with param data", async() => {
+        mockedAxios.get.mockResolvedValueOnce({ data: apiData })
+        await getFilm("1234")
+        // get the arguments passed to the function call
+        let axiosGetUrl = jest.spyOn(mockedAxios, "get").mock.calls[0][0]
+        expect(axiosGetUrl.includes("1234"))
     })
 })
 
